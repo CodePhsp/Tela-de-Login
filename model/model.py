@@ -35,7 +35,7 @@ class ModelRead(ModelConection):
     def autenticarUsuario(self, user, password):
         try:
             self.conectBase()
-            sql_query = f'SELECT NOME_COMPLETO, CARGO, SETOR, NOME_USUARIO, SENHA FROM tbl_usuario WHERE NOME_USUARIO="{user}" AND SENHA="{password}";'
+            sql_query = f'SELECT NOME_USUARIO, SENHA FROM tbl_usuario WHERE NOME_USUARIO="{user}" AND SENHA="{password}";'
             self.seach = self.cursor.execute(sql_query).fetchall()
 
             if self.seach == []:
